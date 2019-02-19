@@ -44,7 +44,7 @@ class TestSurvey(TransactionCase):
 
     def test_01_question_type_validation_save_line_function(self):
         for (question_type, text) in self.env['survey.question']._fields['type'].selection:
-            # Each question ype must have validation function.
+            # Each question type must have validation function.
             self.assertTrue(hasattr(self.env['survey.question'], 'validate_' + question_type), msg="Question must have a validation method in\
                 the form of 'validate_' followed by the name of the type.")
 
